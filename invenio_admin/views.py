@@ -73,7 +73,7 @@ def protected_adminview_factory(base_class):
             """
             invenio_app = current_app.extensions.get('invenio-app', None)
             if invenio_app:
-                setattr(invenio_app.talisman.local_options,
+                setattr(invenio_app.talisman,
                         'content_security_policy', None)
             return super(ProtectedAdminView, self)._handle_view(name, **kwargs)
 
